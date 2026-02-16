@@ -1,4 +1,4 @@
-import { CreateUserParams, SignInParams } from '@/type';
+import { CreateUserParams, SignInParams, User } from '@/type';
 import {
 	Account,
 	Avatars,
@@ -78,7 +78,7 @@ export const getCurrentUser = async () => {
 	try {
 		const currentAccount = await account.get();
 		if (!currentAccount) throw Error;
-		const currentUser = await databases.listDocuments({
+		const currentUser = await databases.listDocuments<User>({
 			databaseId: appwriteConfig.databaseId,
 			collectionId: appwriteConfig.userCollectionId,
 			queries: [Query.equal('accountId', currentAccount.$id)],
