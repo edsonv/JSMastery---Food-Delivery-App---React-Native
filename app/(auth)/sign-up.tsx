@@ -2,7 +2,7 @@ import CustomButton from '@/components/CustomButton';
 import CustomInput from '@/components/CustomInput';
 import { createUser } from '@/lib/appwrite';
 import { Link, router } from 'expo-router';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Alert, Text, View } from 'react-native';
 
 const SignUp = () => {
@@ -25,7 +25,6 @@ const SignUp = () => {
 		setIsSubmitting(true);
 
 		try {
-			// Call appwrite sign up function
 			await createUser({
 				email,
 				password,

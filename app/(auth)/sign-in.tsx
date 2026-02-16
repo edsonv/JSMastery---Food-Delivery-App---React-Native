@@ -2,7 +2,7 @@ import CustomButton from '@/components/CustomButton';
 import CustomInput from '@/components/CustomInput';
 import { signIn } from '@/lib/appwrite';
 import { Link, router } from 'expo-router';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Alert, Text, View } from 'react-native';
 
 const SignIn = () => {
@@ -23,7 +23,6 @@ const SignIn = () => {
 		setIsSubmitting(true);
 
 		try {
-			// Call appwrite sign in function
 			await signIn({ email, password });
 
 			router.replace('/');
