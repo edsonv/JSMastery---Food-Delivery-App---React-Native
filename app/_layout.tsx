@@ -3,6 +3,7 @@ import * as Sentry from '@sentry/react-native';
 import { useFonts } from 'expo-font';
 import { SplashScreen, Stack } from 'expo-router';
 import { useEffect } from 'react';
+import 'react-native-url-polyfill/auto';
 import './global.css';
 
 Sentry.init({

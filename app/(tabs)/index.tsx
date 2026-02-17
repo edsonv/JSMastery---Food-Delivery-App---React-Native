@@ -45,7 +45,7 @@ export default function App() {
 										</View>
 										<View
 											className={cn(
-												'offer-card_info',
+												'offer-card__info',
 												isEven ? 'pl-10' : 'pr-10',
 											)}
 										>
