@@ -44,6 +44,7 @@ export default Sentry.wrap(function RootLayout() {
 
 	useEffect(() => {
 		fetchAuthenticatedUser();
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, []);
 
 	if (!fontsLoaded || isLoading) return null;
