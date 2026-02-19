@@ -1,8 +1,9 @@
 import CartButton from '@/components/CartButton';
+import Filter from '@/components/Filter';
 import MenuCard from '@/components/MenuCard';
+import SearchBar from '@/components/SearchBar';
 import { getCategories, getMenu } from '@/lib/appwrite';
 import useAppwrite from '@/lib/useAppwrite';
-import { MenuItem } from '@/type';
 import cn from 'clsx';
 import { useLocalSearchParams } from 'expo-router';
 import { useEffect } from 'react';
@@ -39,7 +40,7 @@ const Search = () => {
 					const isFirstRightColItem = index % 2 === 0;
 					return (
 						<View className={cn('flex-1 max-w-[48%]', !isFirstRightColItem ? 'mt-10' : 'mt-0')}>
-							<MenuCard item={item as MenuItem} />
+							<MenuCard item={item} />
 						</View>
 					);
 				}}
@@ -60,8 +61,8 @@ const Search = () => {
 							<CartButton />
 						</View>
 
-						<Text>Search Input</Text>
-						<Text>Filter</Text>
+						<SearchBar />
+						<Filter categories={categories!} />
 					</View>
 				)}
 				ListEmptyComponent={() => !loading && <Text>No results</Text>}
